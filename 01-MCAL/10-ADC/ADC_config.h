@@ -1,0 +1,68 @@
+/*
+ * ADC_config.h
+ *
+ *  Created on: Jul 4, 2021
+ *      Author: ibrahim
+ */
+
+#ifndef MCAL_ADC_ADC_CONFIG_H_
+#define MCAL_ADC_ADC_CONFIG_H_
+
+
+/*
+ * options 			: 	ADC_EXTERNAL_AREF
+ * 						ADC_INTERNAL_AVCC
+ * 						ADC_INTERNAL_2_56
+*/
+#define ADC_REFERANCE_VOLTAGE			ADC_INTERNAL_AVCC
+
+/*
+ * Options
+ 	 	 	 	 * ADC_CLCK_2
+				 * ADC_CLCK_4
+				 * ADC_CLCK_8
+				 * ADC_CLCK_16
+				 * ADC_CLCK_32
+				 * ADC_CLCK_64
+				 * ADC_CLCK_128
+	 */
+#define ADC_PRESCALER		ADC_CLCK_128
+
+/* Options
+ 	 	 	 	 * ADC_ENABLE_AUTO_TRIGGERING
+ 	 	 	 	 * ADC_DISABLE_AUTO_TRIGGERING
+ */
+#define ADC_AUTO_TRIGGER			ADC_DISABLE_AUTO_TRIGGERING
+
+#if ADC_AUTO_TRIGGER == ADC_DISABLE_AUTO_TRIGGERING
+
+/*
+ * Options
+				 * ADC_FREE_RUNNING
+				 * ADC_EXTI0
+				 * ADC_ANALOG_COMPARATOR
+				 * ADC_TIM0_COMPARE_MATCH
+				 * ADC_TIM0_OVER_FLOW
+				 * ADC_TIM1_COMPARE_MATCH_B
+				 * ADC_TIM1_OVERFLOW
+				 * ADC_TIM1_ICU
+*/
+#define ADC_AUTO_TRIGGER_SOURCE		ADC_FREE_RUNNING
+#endif
+
+/**
+ * Options
+ 	 	 	 	 * ADC_RIGHT_ADJUST
+  	 	 	 	 * ADC_LEFT_ADJUST
+ */
+#define ADC_ADJUST		ADC_RIGHT_ADJUST
+
+/*
+ * Options
+ 	 	 	 	 * ADC_ENABLE_INTERRUPT
+ 	 	 	 	 * ADC_DISABLE_INTERRUPT
+*/
+#define ADC_INTERRUPT		ADC_DISABLE_INTERRUPT
+
+
+#endif /* MCAL_ADC_ADC_CONFIG_H_ */
